@@ -280,3 +280,23 @@ python manage.py runserver
 python manage.py startapp nameApp
 ```
 
+## Configuración de la Bade de Datos
+> En desarrollo uso sqlLite
+1. Crear migraciones
+```bash
+python manage.py makemigrations
+```
+
+```bash
+python manage.py migrate
+```
+
+2. Crear superusuario
+```bash
+python manage.py createsuperuser
+```
+Pedirá:
+- Email
+- Username
+- Password
+
