@@ -136,3 +136,6 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.AllowAny',
     ),
 }
+
+# Agregamos el modelo User
+AUTH_USER_MODEL = 'users.User'
