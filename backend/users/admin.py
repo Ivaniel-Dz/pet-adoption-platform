@@ -7,9 +7,11 @@ from .models import User
 class CustomUserAdmin(UserAdmin):
     model = User
 
+    # Controla las columnas visibles en la tabla del admin.
     list_display = ('email', 'username', 'role', 'is_staff', 'is_active')
     list_filter = ('role', 'is_staff', 'is_active')
 
+    # Organiza los campos cuando editas un usuario.
     fieldsets = UserAdmin.fieldsets + (
         ('Información adicional', {
             'fields': ('role', 'phone', 'address'),
