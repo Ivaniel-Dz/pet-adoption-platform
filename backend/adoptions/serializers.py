@@ -7,14 +7,16 @@ class AdoptionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Adoption
         fields = '__all__'
-        read_only_fields = ('user', 'status', 'create_at')
+        read_only_fields = ('user', 'create_at')
 
     # Validar que no permita solicitar mascotas no disponible
     def validate(self, data):
-        pet = data['pet']
 
-        if not pet.status:
-            raise serializers.ValidationError(
-                "Esta mascota no esta disponible para adopción.")
+        if self.instance is None:
+            pet = data.get('pet')
+
+            if pet.status != 'AVAILABLE':
+                raise serializers.ValidationError(
+                    "Esta mascota no esta disponible para adopción.")
 
         return data
