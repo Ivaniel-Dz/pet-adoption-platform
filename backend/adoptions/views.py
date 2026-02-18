@@ -21,5 +21,5 @@ class AdoptionViewSet(viewsets.ModelViewSet):
         # Si fuera aprobado
         if adoption.status == 'APPROVED':
             pet = adoption.pet
-            pet.available = False
+            pet.status = 'ADOPTED'
             pet.save()

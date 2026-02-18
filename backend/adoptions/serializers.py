@@ -13,7 +13,7 @@ class AdoptionSerializer(serializers.ModelSerializer):
     def validate(self, data):
         pet = data['pet']
 
-        if not pet.available:
+        if not pet.status:
             raise serializers.ValidationError(
                 "Esta mascota no esta disponible para adopción.")
 
