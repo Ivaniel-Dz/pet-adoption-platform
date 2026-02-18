@@ -3,6 +3,7 @@ from django.urls import path, include
 from rest_framework_simplejwt.views import (TokenObtainPairView, TokenRefreshView, )
 
 urlpatterns = [
+    # Admin
     path('admin/', admin.site.urls),
 
     # JWT
@@ -11,4 +12,8 @@ urlpatterns = [
 
     #Users
     path('api/users/', include('users.urls')),
+
+    #Pets
+    path('api/', include('pets.urls')),
+    
 ]
