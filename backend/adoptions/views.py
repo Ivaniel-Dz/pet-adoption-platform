@@ -8,9 +8,20 @@ from .permissions import IsAdminOrReadOnly
 class AdoptionViewSet(viewsets.ModelViewSet):
     queryset = Adoption.objects.all()
     serializer_class = AdoptionSerializer
-    permission_classes = [IsAuthenticated & IsAdminOrReadOnly]
+    permission_classes = [IsAuthenticated]
 
-    #  Se ejecuta automáticamente al hacer POST. Aquí asignamos el usuario autenticado.
+    #  Controla qué solicitudes puede ver cada usuario.
+    def get_queryset(self):
+        user = self.request.user
+
+        # Si es admin ve todo
+        if user.is_staff:
+            return Adoption.objects.all()
+        
+        # Si es adoptante solo ve su solicitudes
+        return Adoption.objects.filter(user=user)
+
+    #   Asigna automáticamente el usuario autenticado.
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
