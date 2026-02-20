@@ -8,6 +8,8 @@ from rest_framework.exceptions import ValidationError
 
 
 class AdoptionViewSet(viewsets.ModelViewSet):
+    # Define el conjunto de datos que este ViewSet manejará, en este caso todas las adopciones
+    queryset = Adoption.objects.all()
     # Especifica el serializador para convertir datos Adoption a JSON y viceversa
     serializer_class = AdoptionSerializer
     # Requiere autenticación para acceder a cualquier endpoint
