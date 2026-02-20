@@ -2,13 +2,21 @@ from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
 from .models import Adoption
 from .serializers import AdoptionSerializer
-from .permissions import IsAdminOrReadOnly
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter
 
 
 class AdoptionViewSet(viewsets.ModelViewSet):
     queryset = Adoption.objects.all()
     serializer_class = AdoptionSerializer
     permission_classes = [IsAuthenticated]
+
+    # Filtros habilitados
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    # Filtrar por estado
+    filterset_fields = ['status']
+    # Ordenar por fecha
+    ordering_fields = ['created_at']
 
     #  Controla qué solicitudes puede ver cada usuario.
     def get_queryset(self):
