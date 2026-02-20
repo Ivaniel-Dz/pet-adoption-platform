@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users',
     'pets',
     'adoptions',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -129,12 +130,23 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Configuración de Django REST Framework global
 REST_FRAMEWORK = {
+    # Autenticación
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    # Permisos
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
+    # Paginación Global
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
+    # Filtros Globales
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ],
 }
 
 # Agregamos el modelo User

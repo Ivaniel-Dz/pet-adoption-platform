@@ -300,3 +300,8 @@ Pedirá:
 - Username
 - Password
 
+## Paquetes Extras
+1. Django-filter
+```bash
+pip install django-filter
+```
