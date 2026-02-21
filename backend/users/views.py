@@ -1,7 +1,5 @@
 from rest_framework import generics
-from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
-from rest_framework.response import Response
 from .serializers import RegisterSerializer, UserProfileSerializer
 from .models import User
 from .permissions import IsAdminUserRole
@@ -12,13 +10,14 @@ class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
     permission_classes = [AllowAny]
 
-# Autenticación del Usuario
-class ProfileView(APIView):
+# Devuelve el perfil del usuario autenticado
+class MeView(generics.RetrieveAPIView):
+    serializer_class = UserProfileSerializer
     permission_classes = [IsAuthenticated]
 
-    def get(self, request):
-        serializer = UserProfileSerializer(request.user)
-        return Response(serializer.data)
+    # Retorna el usuario autenticado, No es necesario pasar un ID
+    def get_object(self):
+        return self.request.user
 
 # Lista de todo los Usuarios (Solo para Admin)
 class UserListView(generics.ListAPIView):
