@@ -15,12 +15,12 @@ class AdminStatsView(APIView):
         data = {
             # Estadísticas de mascotas
             'total_pets': Pet.objects.count(),
-            'available_pets': Pet.objects.filter(status='available').count(),
-            'adopted_pets': Pet.objects.filter(status='adopted').count(),
+            'available_pets': Pet.objects.filter(status='AVAILABLE').count(),
+            'adopted_pets': Pet.objects.filter(status='ADOPTED').count(),
             # Estadísticas de adopciones
             'total_adoptions': Adoption.objects.count(),
-            'pending_adoptions': Adoption.objects.filter(status='pending').count(),
-            'approved_adoptions': Adoption.objects.filter(status='approved').count(),
+            'pending_adoptions': Adoption.objects.filter(status='PENDING').count(),
+            'approved_adoptions': Adoption.objects.filter(status='APPROVED').count(),
             # Estadísticas de usuarios
             'total_users': User.objects.count(),
         }
