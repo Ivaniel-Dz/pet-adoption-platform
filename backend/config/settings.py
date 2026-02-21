@@ -128,6 +128,9 @@ STATIC_URL = 'static/'
 # Esto es solo para desarrollo, en producción se restringe (False).
 CORS_ALLOW_ALL_ORIGINS = True
 
+# Permitir cookies en solicitudes CORS (para autenticación)
+CORS_ALLOW_CREDENTIALS = True
+
 # Configuración de Django REST Framework global
 REST_FRAMEWORK = {
     # Autenticación
