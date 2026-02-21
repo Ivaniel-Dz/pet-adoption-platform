@@ -19,4 +19,7 @@ urlpatterns = [
 
     # Adoptions
     path('api/', include('adoptions.urls')),
+
+    # Dashboard Stats
+    path('api/' , include('dashboard.urls')),
 ]

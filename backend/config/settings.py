@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'pets',
     'adoptions',
     'django_filters',
+    'dashboard',
 ]
 
 MIDDLEWARE = [
