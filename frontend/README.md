@@ -18,3 +18,8 @@ npx @angular/cli@latest new [nameProject]
 ```bash
 npx ng version
 ```
+
+## Ejecución del servidor
+```bash
+npx ng serve
+```
