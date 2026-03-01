@@ -23,3 +23,9 @@ npx ng version
 ```bash
 npx ng serve
 ```
+
+## Instalar dependencias necesarias
+```bash
+npm install
+```
+
