@@ -1,3 +1,19 @@
 /* Puedes añadir estilos globales a este archivo e importar otros archivos de estilos */
 
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Tilt+Neon&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Tilt+Neon&display=swap');
+
+// ── Variables ─────────
+$font-primary: 'Nunito', sans-serif;
+
+// Reset de estilos globales
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: $font-primary;
+}
+
+// ── Estilos globales ────────────
+html {
+  scroll-behavior: smooth; // Permite un desplazamiento suave
+}
