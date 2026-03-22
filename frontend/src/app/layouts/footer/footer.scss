@@ -1,0 +1,205 @@
+// ── Variables ──────────────────────────────────────────────
+$color-white: #fcfcf7;
+$color-black: #000000;
+$color-primary: #ff6e61;
+
+.footer {
+  color: $color-white;
+  background-color: $color-primary;
+
+  // ── Contenido principal ──────────────────────────────────
+  &__main {
+    max-width: 1200px;
+    padding: 6rem 1.25rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+    }
+  }
+
+  // ── Brand ────────────────────────────────────────────────
+  &__brand {
+    width: 16rem;
+    flex-shrink: 0;
+    text-align: center;
+    margin: 2.5rem auto 0;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      margin: 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: $color-white;
+    text-decoration: none;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
+
+    img {
+      width: 2.5rem;
+      background-color: $color-white;
+      border-radius: 50%;
+    }
+  }
+
+  &__logo-name {
+    margin-left: 0.75rem;
+    font-size: 1.25rem;
+    color: $color-white;
+  }
+
+  &__tagline {
+    margin-top: 0.5rem;
+    font-size: 0.875rem;
+    color: $color-white;
+  }
+
+  // ── Nav de columnas ──────────────────────────────────────
+  &__nav {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -2.5rem;
+    text-align: center;
+    order: -1;
+
+    @media (min-width: 768px) {
+      padding-right: 5rem;
+      text-align: left;
+    }
+  }
+
+  &__col {
+    width: 100%;
+    padding: 0 1rem;
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1024px) {
+      width: 25%;
+    }
+  }
+
+  &__col-title {
+    font-weight: 500;
+    color: $color-white;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  &__col-list {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    padding: 0;
+
+    li + li {
+      margin-top: 0.25rem;
+    }
+  }
+
+  &__col-link {
+    color: $color-white;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      cursor: pointer;
+      color: #d8c8c8;
+    }
+  }
+
+  // ── Barra inferior ───────────────────────────────────────
+  &__bottom {
+    background-color: $color-white;
+  }
+
+  &__bottom-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+
+    @media (min-width: 640px) {
+      flex-direction: row;
+    }
+  }
+
+  &__copyright {
+    font-size: 0.875rem;
+    color: $color-black;
+    text-align: center;
+
+    @media (min-width: 640px) {
+      text-align: left;
+    }
+
+    a {
+      color: $color-black;
+      margin-left: 0.25rem;
+      text-decoration: none;
+
+      &:hover {
+        color: #9ca3af;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // ── Redes sociales ───────────────────────────────────────
+  &__social {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+
+    @media (min-width: 640px) {
+      margin-left: auto;
+      margin-top: 0;
+      justify-content: flex-start;
+    }
+  }
+
+  &__social-link {
+    color: #9ca3af;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    & + & {
+      margin-left: 0.75rem;
+    }
+
+    &:hover {
+      color: $color-black;
+      cursor: pointer;
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}
