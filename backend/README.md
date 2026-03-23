@@ -305,3 +305,45 @@ Pedirá:
 ```bash
 pip install django-filter
 ```
+
+# Ejemplos de peticiones y respuestas
+
+### 🔐 AUTENTICACIÓN
+* **POST `/api/token/`** → 🔓 Público
+* **POST `/api/token/refresh/`** → 🔓 Público
+---
+
+### 👤 USERS
+* **POST `/api/users/register/`** → 🔓 Público
+* **GET `/api/users/me/`** → 🔐 Requiere token
+* **GET `/api/users/list/`** → 🔐 Requiere token (solo admin)
+---
+
+### 🐾 PETS
+* **GET `/api/pets/`** → 🔓 Público
+* **GET `/api/pets/{id}/`** → 🔓 Público
+* **POST `/api/pets/`** → 🔐 Requiere token (admin)
+* **PUT `/api/pets/{id}/`** → 🔐 Requiere token (admin)
+* **PATCH `/api/pets/{id}/`** → 🔐 Requiere token (admin)
+* **DELETE `/api/pets/{id}/`** → 🔐 Requiere token (admin)
+---
+
+### 📄 ADOPTIONS
+* **GET `/api/adoptions/`** → 🔐 Requiere token
+  * Admin → ve todas
+  * Usuario → solo sus solicitudes
+* **GET `/api/adoptions/{id}/`** → 🔐 Requiere token
+* **POST `/api/adoptions/`** → 🔐 Requiere token (crear solicitud de adopción)
+* **PATCH `/api/adoptions/{id}/`** → 🔐 Requiere token (admin) (aprobar / rechazar)
+* **DELETE `/api/adoptions/{id}/`** → 🔐 Requiere token
+---
+
+### 📊 DASHBOARD (ADMIN)
+* **GET `/api/admin/stats/`** → 🔐 Requiere token (admin)
+Incluye:
+* totales
+* adopciones por mes
+* mascotas por tipo
+* crecimiento
+* últimas adopciones
+---
