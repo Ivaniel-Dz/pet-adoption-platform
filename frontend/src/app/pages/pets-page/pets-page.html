@@ -2,7 +2,7 @@
 
 <div class="pets-grid">
 
-  @for (pet of pets; track pet.id) {
+  @for (pet of pets(); track pet.id) {
 
     <div class="pet-card">
       <h3>{{ pet.name }}</h3>
@@ -17,13 +17,13 @@
 <!-- Paginación -->
 <div class="pagination">
 
-  @if (previous) {
+  @if (previous()) {
     <button (click)="prevPage()">Anterior</button>
   }
 
-  <span>Página {{ currentPage }}</span>
+  <span>Página {{ currentPage() }}</span>
 
-  @if (next) {
+  @if (next()) {
     <button (click)="nextPage()">Siguiente</button>
   }
 
