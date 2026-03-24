@@ -15,11 +15,17 @@ export class PetsPage implements OnInit {
   // Inyección de servicios
   private petsService = inject(PetsService);
 
-  // Signals
+  // Estado principal
   pets = signal<Pet[]>([]);
   next = signal<string | null>(null);
   previous = signal<string | null>(null);
   currentPage = signal(1);
+
+  // Filtros
+  search = signal('')
+  status = signal('')
+  species = signal('')
+  size = signal('')
 
   // Cargar los pets al iniciar el componente
   ngOnInit() {
@@ -28,17 +34,32 @@ export class PetsPage implements OnInit {
 
   // Método para cargar los pets, con pagination
   loadPets(page: number = 1) {
-    this.petsService.getPets(page).subscribe({
+    this.petsService.getPets({
+      page,
+      search: this.search(),
+      status: this.status(),
+      species: this.species(),
+      size: this.size(),
+    }).subscribe({
       next: (res) => {
         this.pets.set(res.results);
         this.next.set(res.next);
         this.previous.set(res.previous);
         this.currentPage.set(page);
-
-        console.log(this.pets());
       },
       error: (err) => console.error(err),
     });
+  }
+
+  // Método para Búsquedas
+  onSearch(value: string) {
+    this.search.set(value);
+    this.loadPets(1)
+  }
+
+  // Método para Filtro
+  onFilterChange(){
+    this.loadPets(1) // Reiniciamos a la primera página al cambiar el filtro
   }
 
   // Métodos para manejar la paginación
