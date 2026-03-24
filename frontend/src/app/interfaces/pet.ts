@@ -1,6 +1,6 @@
-export type PetSpecies = 'DOG' | 'CAT';
+export type PetSpecies = 'Perro' | 'Gato';
 
-export type PetSize = 'SMALL' | 'MEDIUM' | 'LARGE';
+export type PetSize = 'Pequeño' | 'Mediano' | 'Grande';
 
 export type PetStatus = 'AVAILABLE' | 'ADOPTED';
 

@@ -29,3 +29,4 @@ npx ng serve
 npm install
 ```
 
+> A partir de Angular 22, no funciona las Directivas: ``ngFor`` y ``ngIF``, usar ``Signal`` para evitar bugs de carga de datos con el uso de las directivas ``@for`` y ``@if``
