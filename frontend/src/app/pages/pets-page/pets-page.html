@@ -1,1 +1,30 @@
-<p>pets-page works!</p>
+<h1>Mascotas en adopción</h1>
+
+<div class="pets-grid">
+
+  @for (pet of pets; track pet.id) {
+
+    <div class="pet-card">
+      <h3>{{ pet.name }}</h3>
+      <p>Edad: {{ pet.age }}</p>
+      <h2>Estado: {{ pet.status }}</h2>
+    </div>
+
+  }
+
+</div>
+
+<!-- Paginación -->
+<div class="pagination">
+
+  @if (previous) {
+    <button (click)="prevPage()">Anterior</button>
+  }
+
+  <span>Página {{ currentPage }}</span>
+
+  @if (next) {
+    <button (click)="nextPage()">Siguiente</button>
+  }
+
+</div>
