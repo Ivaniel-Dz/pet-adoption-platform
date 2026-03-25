@@ -6,6 +6,7 @@ $color-primary: #ff6e61;
 .pets-section {
   color: #4b5563;
   background: $color-white;
+  padding-top: 3.5rem;
 
   // ── Header (título y descripción) ─────────────────────────
   &__header {
@@ -36,7 +37,9 @@ $color-primary: #ff6e61;
   // ── Contenedor ────────────────────────────────────────────
   &__container {
     max-width: 1200px;
-    padding: 6rem 1.25rem;
+    padding: 0 1.25rem;
+    padding-top: 2rem;
+    padding-bottom: 6rem ;
     margin: 0 auto;
   }
 }
