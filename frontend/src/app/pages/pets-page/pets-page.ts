@@ -4,10 +4,11 @@ import { Pet } from '../../interfaces/pet';
 import { CommonModule } from '@angular/common';
 import { Navigation } from '../../layouts/navigation/navigation';
 import { Footer } from '../../layouts/footer/footer';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pets-page',
-  imports: [CommonModule, Navigation, Footer],
+  imports: [CommonModule, Navigation, Footer, RouterLink],
   templateUrl: './pets-page.html',
   styleUrl: './pets-page.scss',
 })

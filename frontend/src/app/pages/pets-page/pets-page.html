@@ -33,7 +33,7 @@
               <h1 class="card__title">{{ pet.name }}</h1>
               <p class="card__text">{{ pet.description }}</p>
               <div class="card__footer">
-                <a class="card__link"
+                <a [routerLink]="['/pets', pet.id]" class="card__link"
                   >Más Detalles
                   <svg
                     viewBox="0 0 24 24"
