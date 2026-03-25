@@ -1,10 +1,10 @@
-<!-- Header: Nav -->
+<!-- Navegación -->
 <app-navigation />
 
-<!-- Main -->
-<section class="blog-section">
+<!-- Section -->
+<section class="pets-section">
   <!-- Title -->
-  <div class="blog-title">
+  <div class="pets-section__header">
     <h1>Mascotas en Adopción</h1>
     <p>
       Cada uno de estos peludos tiene una historia única y un corazón lleno de amor por dar. Explora
@@ -12,75 +12,56 @@
       acto de amor que cambia dos vidas: la de ellos y la tuya.
     </p>
   </div>
-  
-  <!-- Container Main  -->
-  <div class="container">
-    <!-- filter -->
 
-    <!-- Card-Container -->
-    <div class="cards-wrapper">
-      <!-- Card -->
+  <!-- Container Main -->
+  <div class="pets-section__container">
+    <!-- Grid de mascotas -->
+    <div class="pets-grid">
       @for (pet of pets(); track pet.id) {
-        <div class="card-col">
-          <div class="card">
-            <img
-              class="card__image"
-              [src]="pet.image_url || 'https://dummyimage.com/720x400'"
-              alt="blog"
-            />
-            <div class="card__body">
-              <h2 class="card__category">{{ pet.species }}</h2>
-              <h1 class="card__title">{{ pet.name }}</h1>
-              <p class="card__text">{{ pet.description }}</p>
-              <div class="card__footer">
-                <a [routerLink]="['/pets', pet.id]" class="card__link"
-                  >Más Detalles
-                  <svg
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M5 12h14"></path>
-                    <path d="M12 5l7 7-7 7"></path>
-                  </svg>
-                </a>
-                <span class="card__stat">
-                  @if (pet.status === 'AVAILABLE') {
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="#13db31"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5"
-                      ></path>
-                    </svg>
-                    Disponible
-                  } @else {
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      fill="#db1414"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5"
-                      ></path>
-                      <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path>
-                    </svg>
-                    Adoptado
-                  }
-                </span>
-              </div>
+      <div class="pet-col">
+        <div class="pet-card">
+          <img class="pet-card__image" [src]="
+                pet.image_url ||
+                'https://cdn.pixabay.com/photo/2024/09/13/14/50/adult-9045197_1280.jpg'
+              " alt="Foto de {{ pet.name }}" />
+
+          <div class="pet-card__body">
+            <h2 class="pet-card__species">{{ pet.species_display }}</h2>
+            <h1 class="pet-card__name">{{ pet.name }}</h1>
+            <p class="pet-card__description">{{ pet.description }}</p>
+
+            <div class="pet-card__footer">
+              <a [routerLink]="['/pet', pet.id]" class="pet-card__detail-link">
+                Más Detalles
+                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M5 12h14"></path>
+                  <path d="M12 5l7 7-7 7"></path>
+                </svg>
+              </a>
+
+              <span class="pet-card__status">
+                @if (pet.status === 'AVAILABLE') {
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#13db31" viewBox="0 0 24 24">
+                  <path
+                    d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5">
+                  </path>
+                </svg>
+                Disponible
+                } @else {
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#db1414" viewBox="0 0 24 24">
+                  <path
+                    d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5">
+                  </path>
+                  <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path>
+                </svg>
+                Adoptado
+                }
+              </span>
             </div>
           </div>
         </div>
+      </div>
       }
     </div>
   </div>
