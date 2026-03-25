@@ -1,0 +1,65 @@
+<!-- Navigation -->
+ <app-navigation/>
+
+<!-- Section Main -->
+<section class="pet-detail">
+  <div class="pet-detail__container">
+    @if (pet()) {
+    <!-- inner -->
+    <div class="pet-detail__inner">
+
+      <!-- Datos -->
+      <div class="pet-detail__info">
+        <h2 class="pet-detail__species"> {{ pet()?.species_display }} </h2>
+        <h1 class="pet-detail__name"> {{ pet()?.name }} </h1>
+
+        <div class="pet-detail__tabs">
+          <span class="pet-detail__tab pet-detail__tab--active"> Descripción </span>
+        </div>
+
+        <p class="pet-detail__description"> {{ pet()?.description }} </p>
+
+        <div class="pet-detail__spec">
+          <span class="pet-detail__spec-label"> Edad </span>
+          <span class="pet-detail__spec-value"> {{ pet()?.age }} </span>
+        </div>
+        <div class="pet-detail__spec">
+          <span class="pet-detail__spec-label"> Tamaño </span>
+          <span class="pet-detail__spec-value"> {{ pet()?.size_display }} </span>
+        </div>
+        <div class="pet-detail__spec">
+          <span class="pet-detail__spec-label"> Raza </span>
+          <span class="pet-detail__spec-value"> {{ pet()?.breed || 'No Definido' }} </span>
+        </div>
+
+        <div class="pet-detail__actions">
+          <span class="pet-detail__status" aria-label="Estado de adopción">
+            @if (pet()?.status === 'AVAILABLE') {
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#13db31" viewBox="0 0 24 24">
+                <path d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5"></path>
+              </svg>
+              Disponible
+            } @else {
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#db1414" viewBox="0 0 24 24">
+                <path d="M12 5c-3.86 0-7 3.14-7 7s3.14 7 7 7 7-3.14 7-7-3.14-7-7-7m0 12c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5"></path>
+                <path d="M12 9a3 3 0 1 0 0 6 3 3 0 1 0 0-6"></path>
+              </svg>
+              Adoptado
+            }
+          </span>
+          <button class="pet-detail__btn-adopt"> Solicitar Adopción </button>
+        </div>
+      </div>
+
+      <!-- Imagen -->
+      <img class="pet-detail__image" alt="Foto de {{ pet()?.name }}" [src]="getPetImage()" >
+
+    </div>
+    } @else {
+      <h2 class="pet-detail__species"> Cargando datos... </h2>
+    }
+  </div>
+</section>
+
+<!-- Pie de pagina -->
+ <app-footer/>

@@ -29,8 +29,11 @@ export class PetsService {
     if (params.species) query.append('species', params.species);
     if (params.size) query.append('size', params.size);
 
-    return this.http.get<any>(
-      `${this.apiUrl}/pets/?${query.toString()}`
-    );
+    return this.http.get<any>(`${this.apiUrl}/pets/?${query.toString()}`);
+  }
+
+  // Obtener los detalles de una mascota por su ID
+  getPetById(id: number) {
+    return this.http.get<any>(`${this.apiUrl}/pets/${id}/`);
   }
 }
