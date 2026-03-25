@@ -1,5 +1,7 @@
 // ── Variables ──────────────────────────────────────────────
 $color-white: #fcfcf7;
+$color-black: #000000;
+$color-primary: #ff6e61;
 
 .pets-section {
   color: #4b5563;
@@ -141,6 +143,31 @@ $color-white: #fcfcf7;
     }
     @media (min-width: 1024px) {
       margin-left: auto;
+    }
+  }
+}
+
+.pet-more {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  margin-left: 1rem;
+
+  a {
+    color: $color-black;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      margin-left: 0.5rem;
+      transition: margin-left 0.3s ease;
+    }
+
+    &:hover svg {
+      margin-left: 0.75rem;
     }
   }
 }
