@@ -1,0 +1,18 @@
+$color-primary: #ff6e61;
+
+.divider {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  &__line {
+    height: 1px;
+    flex: 1;
+    background-color: $color-primary;
+
+    @media (prefers-color-scheme: dark) {
+      background-color: $color-primary;
+    }
+  }
+}
