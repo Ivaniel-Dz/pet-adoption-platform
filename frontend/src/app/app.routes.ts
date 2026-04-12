@@ -3,6 +3,9 @@ import { Routes } from '@angular/router';
 import { LandingPage } from './pages/landing-page/landing-page';
 import { PetsPage } from './pages/pets-page/pets-page';
 import { PetDetailPage } from './pages/pet-detail-page/pet-detail-page';
+import { DonationPage } from './pages/donation-page/donation-page';
+import { AdoptionInfoPage } from './pages/adoption-info-page/adoption-info-page';
+import { VolunteerPage } from './pages/volunteer-page/volunteer-page';
 
 // Definimos las rutas de la aplicación
 export const routes: Routes = [
@@ -20,5 +23,20 @@ export const routes: Routes = [
     path: 'pet/:id',
     component: PetDetailPage,
     title: 'Detalles de la Mascota',
-  }
+  },
+  {
+    path: 'adopt-info',
+    component: AdoptionInfoPage,
+    title: 'Como Adoptar',
+  },
+  {
+    path: 'donation',
+    component: DonationPage,
+    title: 'Como Donar',
+  },
+  {
+    path: 'volunteer',
+    component: VolunteerPage,
+    title: 'Como ser Voluntario',
+  },
 ];
