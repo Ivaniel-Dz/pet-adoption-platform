@@ -1,0 +1,92 @@
+// ── Variables ──────────────────────────────────────────────
+$color-white: #fcfcf7;
+$color-black: #000000;
+$color-primary: #ff6e61;
+
+.cta-section {
+    padding: 60px 20px;
+    background: $color-white;
+}
+
+.cta-section__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.cta-section__content {
+    max-width: 700px;
+
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.6;
+    }
+}
+
+.cta-section__actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Botones reutilizables */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Botón principal */
+.btn--primary {
+    background-color: $color-primary;
+    color: #fff;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #ff998f;
+    }
+}
+
+/* Botón secundario */
+.btn--secondary {
+    background-color: transparent;
+    border: 2px solid #ff6e61;
+    color: $color-primary;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $color-primary;
+        color: #fff;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cta-section__content h2 {
+        font-size: 1.6rem;
+    }
+
+    .cta-section__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
