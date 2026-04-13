@@ -63,10 +63,10 @@
 
 // ── Tarjeta de información ────────────────────────────────
 .about-card {
-    background: #fff;
     padding: 1.5rem;
-    border-radius: 0.375rem;
-    border: 1px solid #eee;
+    border: 2px solid rgba(229, 231, 235, 0.6);
+    border-radius: 0.5rem;
+    overflow: hidden;
     transition:
         box-shadow 0.3s ease,
         transform 0.3s ease;

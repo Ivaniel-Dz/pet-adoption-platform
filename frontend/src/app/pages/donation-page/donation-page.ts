@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { Navigation } from '../../layouts/navigation/navigation';
 import { Footer } from '../../layouts/footer/footer';
-import { LucideBadgeCheck, LucideLandmark, LucideWallet, LucideHouseHeart, LucideHandHeart, LucideBone } from '@lucide/angular'
+import { LucideLandmark, LucideWallet, LucideHouseHeart, LucideHandHeart, LucideBone, LucideCircleCheckBig } from '@lucide/angular'
 
 @Component({
   selector: 'app-donation-page',
   imports: [
     Navigation,
-    LucideBadgeCheck,
+    LucideCircleCheckBig,
     LucideLandmark,
     LucideWallet,
     LucideHouseHeart,
