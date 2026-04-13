@@ -1,0 +1,86 @@
+// ── Variables ──────────────────────────────────────────────
+$color-white: #fcfcf7;
+$color-black: #000000;
+$color-primary: #ff6e61;
+
+.donations {
+  padding: 80px 20px;
+  background-color: $color-white;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: 60px;
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: #555;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__subtitle {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  &__card {
+    background: $color-white;
+    padding: 16px;
+    border: 2px solid rgba(229, 231, 235, 0.6);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 10px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    span {
+      font-weight: 500;
+      color: #111827;
+      grid-column: 2;
+      grid-row: 1;
+      align-self: center;
+    }
+
+    small {
+      color: #555;
+      font-size: 0.9rem;
+      grid-column: 1 / -1;
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    &__content {
+      grid-template-columns: 1fr;
+    }
+  }
+}
