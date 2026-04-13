@@ -2,6 +2,7 @@
 $color-white: #fcfcf7;
 $color-black: #000000;
 $color-primary: #ff6e61;
+$color-primary-hover: #ff998f;
 
 .cta-section {
     padding: 60px 20px;
@@ -57,7 +58,7 @@ $color-primary: #ff6e61;
 
     &:hover {
         cursor: pointer;
-        background-color: #ff998f;
+        background-color: $color-primary-hover;
     }
 }
 
