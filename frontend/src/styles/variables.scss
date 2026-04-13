@@ -1,0 +1,19 @@
+// ── Variables ──────────────────────────────────────────────
+$color-white: #fcfcf7;
+$color-black: #000000;
+$color-white-20: rgba(255, 255, 255, 0.2);
+$color-black-50: rgba(0, 0, 0, 0.5);
+$color-primary: #ff6e61;
+$color-primary-hover: #ff998f;
+
+$gradient-main: linear-gradient(
+  90deg,
+  rgb(118, 167, 63)  0%,
+  rgb(51, 143, 118)  40%,
+  rgb(55, 141, 167)  50%,
+  rgb(117, 152, 242) 70%,
+  rgb(144, 118, 236) 100%
+);
+
+$shadow-card: 0 8px 8px $color-black-50, inset 0px 2px 2px $color-white-20;
+$shadow-btn:  0 6px 8px $color-black-50, inset 0px 2px 2px $color-white-20;

@@ -1,8 +1,5 @@
-// ── Variables ──────────────────────────────────────────────
-$color-white: #fcfcf7;
-$color-black: #000000;
-$color-primary: #ff6e61;
-$color-primary-hover: #ff998f;
+// Instancia de variables globales
+@use 'styles/variables' as *;
 
 .steps {
     color: #4b5563;

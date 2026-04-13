@@ -1,7 +1,5 @@
-// ── Variables ──────────────────────────────────────────────
-$color-white: #fcfcf7;
-$color-black: #000000;
-$color-primary: #ff6e61;
+// Instancia de variables globales
+@use 'styles/variables' as *;
 
 .header {
   color: $color-black;
