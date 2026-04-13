@@ -1,0 +1,98 @@
+// ── Variables ──────────────────────────────────────────────
+$color-white: #fcfcf7;
+$color-black: #000000;
+$color-primary: #ff6e61;
+
+.features {
+    background-color: $color-white;
+    color: #4b5563;
+
+    // ── Contenedor ───────────────────────────────────────────
+    &__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 6rem 1.25rem;
+    }
+
+    // ── Título ───────────────────────────────────────────────
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        text-align: center;
+        color: #111827;
+        margin-bottom: 5rem;
+
+        @media (min-width: 640px) {
+            font-size: 1.875rem;
+        }
+
+        br {
+            display: none;
+
+            @media (min-width: 640px) {
+                display: block;
+            }
+        }
+    }
+
+    // ── Grid ─────────────────────────────────────────────────
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -1rem -1rem -2.5rem -1rem;
+
+        @media (min-width: 768px) {
+            margin-top: -1rem;
+        }
+    }
+
+    // ── Item ─────────────────────────────────────────────────
+    &__item {
+        display: flex;
+        padding: 1rem;
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        @media (min-width: 768px) {
+            width: 33.333%;
+            margin-bottom: 0;
+        }
+    }
+
+    // ── Icono ────────────────────────────────────────────────
+    &__icon {
+        width: 3rem;
+        height: 3rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 9999px;
+        background-color: #e0e7ff;
+        color: #6366f1;
+        margin-bottom: 1rem;
+        flex-shrink: 0;
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    // ── Contenido ────────────────────────────────────────────
+    &__content {
+        flex-grow: 1;
+        padding-left: 1.5rem;
+    }
+
+    &__subtitle {
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: #111827;
+        margin-bottom: 0.5rem;
+    }
+
+    &__text {
+        font-size: 1rem;
+        line-height: 1.625;
+    }
+}
