@@ -347,3 +347,55 @@ Incluye:
 * crecimiento
 * últimas adopciones
 ---
+
+
+# Ejecución del Proyecto
+
+1. Clonar repo:
+
+```bash
+git clone <repo-url>
+```
+
+2. Entrar al backend:
+
+```bash
+cd backend
+```
+
+3. Crear entorno virtual:
+> Verificar si tienes virtualenv, si no instalarlo
+
+```bash
+virtualenv venv
+```
+
+4. Activarlo:
+
+```bash
+.\venv\Scripts\activate
+```
+
+5. Instalar dependencias:
+
+```bash
+pip install -r requirements.txt
+```
+
+6. Migraciones:
+
+```bash
+python manage.py migrate
+```
+
+```bash
+python manage.py createsuperuser
+```
+
+7. Ejecutar:
+
+```bash
+python manage.py runserver
+```
+
+---
