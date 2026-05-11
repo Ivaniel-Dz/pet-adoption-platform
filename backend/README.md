@@ -158,6 +158,11 @@ CORS policy: No 'Access-Control-Allow-Origin' header
 pip install djangorestframework-simplejwt
 ```
 
+> Necesaria para logout seguro
+```bash
+pip install djangorestframework-simplejwt[token_blacklist]
+```
+
 #### ¿Por qué lo instalamos?
 
 Simple JWT implementa autenticación basada en tokens JWT.
@@ -258,6 +263,7 @@ Hoy en día, para tu proyecto:
 | psycopg2      | Conexión PostgreSQL           |
 | CORS          | Permitir Angular consumir API |
 | SimpleJWT     | Autenticación moderna         |
+| JWT Blacklist | Es una extensión opcional de SimpleJWT. Sirve para invalidar refresh tokens antes de que expiren. |
 | python-dotenv | Seguridad y configuración     |
 
 ---

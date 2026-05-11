@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Paquetes extras
     'rest_framework',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     # Local apps
     'users',
@@ -126,8 +128,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-# Esto es solo para desarrollo, en producción se restringe (False).
-CORS_ALLOW_ALL_ORIGINS = True
+# Configuración de CORS para permitir solo el frontend Angular
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:4200",
+]
 
 # Permitir cookies en solicitudes CORS (para autenticación)
 CORS_ALLOW_CREDENTIALS = True
@@ -155,3 +159,20 @@ REST_FRAMEWORK = {
 
 # Agregamos el modelo User
 AUTH_USER_MODEL = 'users.User'
+
+# Configuración de Simple JWT
+SIMPLE_JWT = {
+    # Access token corto
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+
+    # Refresh token más largo
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+
+    # Rotar refresh token
+    'ROTATE_REFRESH_TOKENS': True,
+
+    # Invalidar refresh anterior
+    'BLACKLIST_AFTER_ROTATION': True,
+
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
