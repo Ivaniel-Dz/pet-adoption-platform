@@ -40,11 +40,11 @@ class LoginView(APIView):
 
     def post(self, request):
 
-        username = request.data.get('username')
+        email = request.data.get('email')
         password = request.data.get('password')
 
-        # Buscar usuario
-        user = User.objects.filter(username=username).first()
+        # Buscar usuario por email
+        user = User.objects.filter(email=email).first()
 
         # Validar credenciales
         if not user or not user.check_password(password):
