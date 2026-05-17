@@ -1,40 +1,59 @@
+<!-- Section Main -->
 <section class="auth-section">
   <div class="auth-section__inner">
     <div class="auth-section__card">
 
       <h1 class="auth-section__title">Crea tu cuenta</h1>
 
+      <!-- Formulario -->
       <form class="auth-section__form" [formGroup]="registerForm" (ngSubmit)="signUp()">
 
+        <!-- Email -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Tu Email</span>
           <input class="auth-section__input" type="email" placeholder="Ex. james@bond.com" inputmode="email" formControlName="email" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="registerForm" controlName="email" message="Email es requerido" />
 
+        <!-- Nombre del Usuario -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Nombre de usuario</span>
           <input class="auth-section__input" type="text" placeholder="Ex. james_bond" formControlName="username" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="registerForm" controlName="username" message="Usuario es requerido" />
 
+        <!-- Contraseña -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Tu Contraseña</span>
           <input class="auth-section__input" type="password" placeholder="••••••••" formControlName="password" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="registerForm" controlName="password" message="Contraseña es requerida" />
 
+        <!-- Teléfono -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Teléfono</span>
           <input class="auth-section__input" type="tel" placeholder="Ex. +507 6000-0000" inputmode="tel" formControlName="phone" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="registerForm" controlName="phone" message="Teléfono es requerido" />
 
+        <!-- Dirección -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Dirección</span>
           <input class="auth-section__input" type="text" placeholder="Ex. Calle 50, Ciudad de Panamá" formControlName="address" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="registerForm" controlName="address" message="Dirección es requerida" />
+
+        <!-- Error de servidor -->
+        @if (errorMessage()) {
+          <p style="color: red; text-align: center;">
+            {{ errorMessage()}}
+          </p>
+        }
 
         <input class="auth-section__submit" type="submit" value="Registrarse" [disabled]="loading()" />
 

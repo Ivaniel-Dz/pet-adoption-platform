@@ -1,25 +1,37 @@
 <!-- Header -->
 <app-navigation />
 
+<!-- Section Login -->
 <section class="auth-section">
   <div class="auth-section__inner">
     <div class="auth-section__card">
 
       <h1 class="auth-section__title">Accede a tu cuenta</h1>
 
+      <!-- Formulario -->
       <form class="auth-section__form" [formGroup]="loginForm" (ngSubmit)="signIn()">
-
+        <!-- Email -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Tu Email</span>
           <input class="auth-section__input" type="email" placeholder="Ex. james@bond.com" inputmode="email" formControlName="email" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="loginForm" controlName="email" message="Email es requerido" />
 
+        <!-- Password -->
         <label class="auth-section__label">
           <span class="auth-section__label-text">Tu Contraseña</span>
           <input class="auth-section__input" type="password" placeholder="••••••••" formControlName="password" />
         </label>
+        <!-- Alerta -->
         <app-message-invalid-component [formGroup]="loginForm" controlName="password" message="Contraseña es requerida" />
+
+        <!-- Error de servidor -->
+        @if (errorMessage()) {
+          <p style="color: red; text-align: center;">
+            {{ errorMessage()}}
+          </p>
+        }
 
         <input class="auth-section__submit" type="submit" value="Iniciar sesión" [disabled]="loading()" />
 

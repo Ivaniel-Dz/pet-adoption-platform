@@ -18,6 +18,7 @@ export class RegisterPage {
 
   // Estados
   loading = signal(false);
+  errorMessage = signal('');
 
   // Formulario
   registerForm = this.fb.group({
@@ -49,6 +50,7 @@ export class RegisterPage {
 
       error: (err) => {
         this.loading.set(false);
+        this.errorMessage.set('Ya el usuario existe');
         console.error(err);
       },
     });
