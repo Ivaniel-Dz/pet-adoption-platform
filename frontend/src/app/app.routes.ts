@@ -6,6 +6,8 @@ import { PetDetailPage } from './pages/pet-detail-page/pet-detail-page';
 import { DonationPage } from './pages/donation-page/donation-page';
 import { AdoptionInfoPage } from './pages/adoption-info-page/adoption-info-page';
 import { VolunteerPage } from './pages/volunteer-page/volunteer-page';
+import { LoginPage } from './auth/login-page/login-page';
+import { RegisterPage } from './auth/register-page/register-page';
 
 // Definimos las rutas de la aplicación
 export const routes: Routes = [
@@ -39,4 +41,14 @@ export const routes: Routes = [
     component: VolunteerPage,
     title: 'Como ser Voluntario',
   },
+  {
+    path: 'auth/login',
+    component: LoginPage,
+    title: 'Iniciar Sesión',
+  },
+  {
+    path: 'auth/register',
+    component: RegisterPage,
+    title: 'Registro'
+  }
 ];

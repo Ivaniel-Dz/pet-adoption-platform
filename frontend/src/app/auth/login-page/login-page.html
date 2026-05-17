@@ -1,0 +1,55 @@
+<!-- Header -->
+<app-navigation />
+
+<!-- Login -->
+<section class="login-section">
+  <div class="login-section__inner">
+
+    <div class="login-section__card">
+      <h1 class="login-section__title"> Accede a tu cuenta </h1>
+
+      <!-- Formulario -->
+      <form class="login-section__form" [formGroup]="loginForm" (ngSubmit)="signIn()">
+        <!-- Email -->
+        <label class="login-section__label">
+          <span class="login-section__label-text">Tu Email</span>
+          <input class="login-section__input" type="email" placeholder="Ex. james@bond.com" inputmode="email" formControlName="email"/>
+        </label>
+        <!-- Alerta -->
+        <app-message-invalid-component [formGroup]="loginForm" controlName="email" message="Email es requerido" />
+
+        <!-- Password -->
+        <label class="login-section__label">
+          <span class="login-section__label-text">Tu Contraseña</span>
+          <input class="login-section__input" type="password" placeholder="••••••••" formControlName="password" />
+        </label>
+        <!-- Alerta -->
+        <app-message-invalid-component [formGroup]="loginForm" controlName="password" message="Contraseña es requerido" />
+
+        <input class="login-section__submit" type="submit" value="Iniciar" [disabled]="loading()" />
+      </form>
+
+      <div>
+        <div class="login-section__divider">
+          <span class="login-section__divider-text">O</span>
+        </div>
+
+        <div class="login-section__register">
+          <a routerLink="/auth/register" class="login-section__register-btn">
+            Registrarse
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <p class="login-section__footer-links">
+      <a href="#" class="login-section__footer-link">Create an account</a>
+      ·
+      <a href="#" class="login-section__footer-link">Forgot password</a>
+      ·
+      <a href="#" class="login-section__footer-link">Privacy &amp; Terms</a>
+    </p>
+
+  </div>
+</section>
