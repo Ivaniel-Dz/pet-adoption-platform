@@ -11,7 +11,7 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const token = authService.accessToken();
 
   // Request públicos, no se le agrega el token
-  const publicRoutes = ['/auth/login/', '/auth/register/', '/auth/refresh/'];
+  const publicRoutes = ['/users/login/', '/users/register/', '/users/refresh/'];
 
   // Verificar si la ruta es pública
   const isPublicRoute = publicRoutes.some((route) => req.url.includes(route));
