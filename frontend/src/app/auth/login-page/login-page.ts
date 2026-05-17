@@ -7,7 +7,7 @@ import { MessageInvalidComponent } from '../../components/message-invalid-compon
 
 @Component({
   selector: 'app-login-page',
-  imports: [ReactiveFormsModule, Navigation, MessageInvalidComponent, RouterLink],
+  imports: [ReactiveFormsModule, RouterLink, Navigation, MessageInvalidComponent],
   templateUrl: './login-page.html',
   styleUrl: './login-page.scss',
 })

@@ -1,1 +1,62 @@
-<p>register-page works!</p>
+<section class="auth-section">
+  <div class="auth-section__inner">
+    <div class="auth-section__card">
+
+      <h1 class="auth-section__title">Crea tu cuenta</h1>
+
+      <form class="auth-section__form" [formGroup]="registerForm" (ngSubmit)="signUp()">
+
+        <label class="auth-section__label">
+          <span class="auth-section__label-text">Tu Email</span>
+          <input class="auth-section__input" type="email" placeholder="Ex. james@bond.com" inputmode="email" formControlName="email" />
+        </label>
+        <app-message-invalid-component [formGroup]="registerForm" controlName="email" message="Email es requerido" />
+
+        <label class="auth-section__label">
+          <span class="auth-section__label-text">Nombre de usuario</span>
+          <input class="auth-section__input" type="text" placeholder="Ex. james_bond" formControlName="username" />
+        </label>
+        <app-message-invalid-component [formGroup]="registerForm" controlName="username" message="Usuario es requerido" />
+
+        <label class="auth-section__label">
+          <span class="auth-section__label-text">Tu Contraseña</span>
+          <input class="auth-section__input" type="password" placeholder="••••••••" formControlName="password" />
+        </label>
+        <app-message-invalid-component [formGroup]="registerForm" controlName="password" message="Contraseña es requerida" />
+
+        <label class="auth-section__label">
+          <span class="auth-section__label-text">Teléfono</span>
+          <input class="auth-section__input" type="tel" placeholder="Ex. +507 6000-0000" inputmode="tel" formControlName="phone" />
+        </label>
+        <app-message-invalid-component [formGroup]="registerForm" controlName="phone" message="Teléfono es requerido" />
+
+        <label class="auth-section__label">
+          <span class="auth-section__label-text">Dirección</span>
+          <input class="auth-section__input" type="text" placeholder="Ex. Calle 50, Ciudad de Panamá" formControlName="address" />
+        </label>
+        <app-message-invalid-component [formGroup]="registerForm" controlName="address" message="Dirección es requerida" />
+
+        <input class="auth-section__submit" type="submit" value="Registrarse" [disabled]="loading()" />
+
+      </form>
+
+      <div>
+        <div class="auth-section__divider">
+          <span class="auth-section__divider-text">O</span>
+        </div>
+        <div class="auth-section__action">
+          <a routerLink="/auth/login" class="auth-section__action-btn">
+            Ya tengo una cuenta
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="auth-section__footer-links">
+      <a href="#" class="auth-section__footer-link">¿Olvidaste tu contraseña?</a>
+      ·
+      <a href="#" class="auth-section__footer-link">Privacidad &amp; Términos</a>
+    </p>
+  </div>
+</section>
