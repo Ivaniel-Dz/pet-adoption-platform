@@ -73,8 +73,8 @@ export class AuthService {
       );
   }
 
-  // Método para verificar si existe un token en memoria
+  // Método para verificar si el usuario está autenticado
   isAuthenticated(): boolean {
-    return !!this.accessToken();
+    return !!this.currentUser();
   }
 }
